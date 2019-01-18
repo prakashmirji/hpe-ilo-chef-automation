@@ -75,5 +75,5 @@ function Set-SNMPExample21
     # Disconnect the session after use
     Disconnect-HPERedfish -Session $session
 }
-## This example is for iLO 4 only.
+## Call the function with required parameters
 Set-SNMPExample21 -Address $Address -Credential $cred -Mode Agentless -AlertsEnabled $SNMPEnabled
