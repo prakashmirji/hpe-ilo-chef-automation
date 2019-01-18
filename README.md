@@ -22,6 +22,7 @@ Chef workstation installed on Windows server
 	
 4. Edit cookbook accordingly for inputs
 	file "cookbook_ILO_configure_SNMP.rb"
+```
 
 ## Deployment
 
