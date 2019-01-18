@@ -48,7 +48,7 @@ We use [GitHub](http://github.org/) for versioning. For the versions available, 
 
 * **GSE Team, Bangalore** 
 
-See also the list of [contributors](https://github.hpe.com/GSE/scaleio-appliance/graphs/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/prakashmirji/hpe-ilo-chef-automation/graphs/contributors) who participated in this project.
 
 ## License
 
