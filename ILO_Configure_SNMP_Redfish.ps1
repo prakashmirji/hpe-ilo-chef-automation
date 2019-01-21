@@ -53,10 +53,7 @@ function Set-SNMPExample21
 
             # create hashtable object according to the parameters provided by user
             $snmpSetting = @{}
-            if($mode -ne '' -and $Mode -ne $null)
-            {
-                #$snmpSetting.Add('Mode',$Mode)
-            }
+
             if($AlertsEnabled -ne $null)
             {
                 $snmpSetting.Add('AlertsEnabled',[System.Convert]::ToBoolean($AlertsEnabled))
