@@ -53,6 +53,10 @@ function Set-SNMPExample21
 
             # create hashtable object according to the parameters provided by user
             $snmpSetting = @{}
+            if($mode -ne '' -and $Mode -ne $null)
+            {
+                #$snmpSetting.Add('Mode',$Mode)
+            }
             if($AlertsEnabled -ne $null)
             {
                 $snmpSetting.Add('AlertsEnabled',[System.Convert]::ToBoolean($AlertsEnabled))
@@ -75,5 +79,5 @@ function Set-SNMPExample21
     # Disconnect the session after use
     Disconnect-HPERedfish -Session $session
 }
-## Call the function with required parameters
+## Call function with required values
 Set-SNMPExample21 -Address $Address -Credential $cred -Mode Agentless -AlertsEnabled $SNMPEnabled
