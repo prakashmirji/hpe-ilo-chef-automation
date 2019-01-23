@@ -4,7 +4,7 @@ $Address = $IloIP
 $secpasswd = ConvertTo-SecureString $Password -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential ($Username, $secpasswd)
 
-function Set-SNMPExample21
+function Set-SNMPAlerts
 {
     param
     (
@@ -14,15 +14,12 @@ function Set-SNMPExample21
         [PSCredential]
         $Credential,
 
-        [System.String]
-        $Mode, # Agentless or Passthru
-
         [System.Object]
         $AlertsEnabled = $null #use true or false only
 
 
     )
-    Write-Host 'Example 21: Configure iLO SNMP settings.'
+    Write-Host 'Configure iLO SNMP settings.'
 
     # Ignore SSL check
     [System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
@@ -30,8 +27,6 @@ function Set-SNMPExample21
     # Create session
     $session = Connect-HPERedfish -Address $Address -Credential $Credential
     
-    Write-Host 'Connection established'
-
     # retrieve list of managers
     $managers = Get-HPERedfishDataRaw -odataid '/redfish/v1/Managers/' -Session $session
     foreach($mgr in $managers.Members.'@odata.id')
@@ -76,5 +71,5 @@ function Set-SNMPExample21
     # Disconnect the session after use
     Disconnect-HPERedfish -Session $session
 }
-## Call function with required values
-Set-SNMPExample21 -Address $Address -Credential $cred -Mode Agentless -AlertsEnabled $SNMPEnabled
+## This is for iLO 5 only.
+Set-SNMPAlerts -Address $Address -Credential $cred -AlertsEnabled $SNMPEnabled
