@@ -5,7 +5,7 @@ This repo contains the powershell scripts and Chef cookbooks for ILO SNMP settin
 Solution works only for iLO 5.
 For setting up SNMP alert destinations user has to add the destination manually through UI and later can be updated (PATCH) 
 any time using chef recipe.
-User should provide alert destination ID to be checked and patched as part of the input.
+User should provide SNMP Alert Destination number which has be checked and patched as part of input.
 
 ## Getting Started
 
