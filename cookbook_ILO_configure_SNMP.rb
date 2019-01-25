@@ -1,7 +1,7 @@
 # iLO credentials
 ilo_ip = '10.188.2.1'
-username = 'usradmin'
-password = 'HP!nvent'
+username = 'xyz'
+password = 'xyz'
 
 # SNMP alerts to be enabled or disabled
 SNMPAlerts_Enabled = 'false' 
