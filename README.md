@@ -1,11 +1,12 @@
 # HPE-Chef-ILO-automation
 This repo contains the powershell scripts and Chef cookbooks for ILO SNMP settings automation.
 
-# DISCLAIMER
-Solution works only for iLO 5.
-For setting up SNMP alert destinations user has to add the destination manually through UI and later can be updated (PATCH) 
-any time using chef recipe.
-User should provide SNMP Alert Destination number which has be checked and patched as part of input.
+use cases supported:
+- enabling snmp
+- check for snmp setting 
+- update snmp setting if it is not in desired state
+
+
 
 ## Getting Started
 
@@ -37,6 +38,11 @@ Execute as follows:-
 ```
 $ chef-client --local-mode .\cookbook_ILO_configure_SNMP.rb
 ```
+## Testing
+Solution was testing only for iLO 5.
+For setting up SNMP alert destinations user has to add the destination manually through UI and later can be updated (PATCH) 
+any time using chef recipe.
+User should provide SNMP Alert Destination number which has be checked and patched as part of input.
 
 ## Built With
 
